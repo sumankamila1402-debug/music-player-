@@ -1,0 +1,175 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a202c; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #e2e8f0; /* Light text */
+}
+.player-container {
+    background-color: #2d3748; /* Slightly lighter dark for the player */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 1.5rem; /* More rounded corners */
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.img-container {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem; /* Rounded corners for image container */
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.title {
+    font-size: 1.75rem; /* Larger title */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #cbd5e0;
+}
+.artist {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #a0aec0;
+}
+.progress-container {
+    background-color: #4a5568; /* Darker grey for progress bar background */
+    border-radius: 9999px; /* Fully rounded */
+    cursor: pointer;
+    height: 8px;
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.progress {
+    background-color: #63b3ed; /* Blue for progress */
+    border-radius: 9999px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.875rem;
+    color: #a0aec0;
+    margin-bottom: 1.5rem;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.control-button {
+    background: none;
+    border: none;
+    color: #cbd5e0;
+    font-size: 2.5rem; /* Larger icons */
+    cursor: pointer;
+    margin: 0 1rem;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    outline: none;
+}
+.control-button:hover {
+    color: #63b3ed; /* Blue on hover */
+    transform: scale(1.1);
+}
+.control-button:active {
+    transform: scale(0.95);
+}
+.play-pause-button {
+    font-size: 3.5rem; /* Even larger play/pause */
+}
+.volume-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    color: #a0aec0;
+}
+.volume-container input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #4a5568;
+    border-radius: 9999px;
+    outline: none;
+    margin: 0 0.5rem;
+}
+.volume-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #63b3ed;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px #2d3748;
+}
+.volume-container input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #63b3ed;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px #2d3748;
+}
+.playlist {
+    width: 100%;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #4a5568;
+}
+.playlist-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+.playlist-item:hover {
+    background-color: #4a5568;
+}
+.playlist-item.active {
+    background-color: #63b3ed;
+    color: #1a202c;
+    font-weight: 600;
+}
+.playlist-item.active .playlist-artist {
+    color: #1a202c;
+}
+.playlist-title {
+    font-weight: 600;
+}
+.playlist-artist {
+    font-size: 0.875rem;
+    color: #a0aec0;
+}
+.playlist-duration {
+    font-size: 0.875rem;
+    color: #a0aec0;
+}
